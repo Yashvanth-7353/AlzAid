@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caretaker Dashboard</title>
+  <link rel="stylesheet" href="css/caretaker.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome, Caretaker Sarah! 👋</h1>
+  </header>
+
+  <div class="container">
+    <!-- Overview Section -->
+    <section class="overview">
+      <h2 class="section-title">Overview</h2>
+      <div class="overview-grid">
+        <div class="card">
+          <h3>Total Media Uploaded</h3>
+          <p>45 Files</p>
+        </div>
+        <div class="card">
+          <h3>Recent Interactions</h3>
+          <p>12 This Week</p>
+        </div>
+        <div class="card">
+          <h3>Pending Tasks</h3>
+          <p>3 Actions Needed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Media Section -->
+    <section class="upload-media">
+      <h2 class="section-title">Upload Media</h2>
+      <div class="upload-area" onclick="document.getElementById('file-input').click();">
+        <p>Drag & drop photos and videos here, or click to browse.</p>
+        <button class="button">Upload Media</button>
+        <input type="file" id="file-input" multiple accept="image/*,video/*">
+        <div id="file-list"></div>
+      </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="reports">
+      <h2 class="section-title">Patient Reports</h2>
+      <div style="text-align: center;">
+        <a href="#" class="button">View Reports</a>
+        <a href="#" class="button">Download Reports</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2024 CareTaker Dashboard. All rights reserved.</p>
+  </footer>
+
+  <script src="js/caretaker.js" defer></script>
+</body>
+</html>

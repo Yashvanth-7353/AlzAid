@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryLane - Your Digital Memory Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 1 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                    <path d="M17.5 8.5c.223 .223 .323 .5 .463 .785"></path>
+                    <path d="M6.5 15.5c.223 -.223 .323 -.5 .463 -.785"></path>
+                </svg>
+                <span>MemoryLane</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Features</a>
+                <button class="login-btn" onclick="openLoginModal()">Login</button>
+                <!-- Sign up button -->
+<button id="signupButton" onclick="openSignupModal()">Sign Up</button>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Digital Memory Companion</h1>
+                <p>Empowering individuals with Alzheimer's through innovative technology.
+                   Stay connected with memories, loved ones, and daily activities.</p>
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="openLoginModal()">Get Started</button>
+                    <button class="secondary-btn">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Features Designed for You</h2>
+            <p class="features-subtitle">Tools and features that help maintain independence and connection</p>
+            <div class="features-grid" id="features-grid"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 MemoryLane. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Updated Login Modal -->
+<!-- Login Modal -->
+<div id="loginModal" class="modal-overlay hidden">
+    <div class="modal">
+        <button class="close-btn" onclick="closeLoginModal()">×</button>
+        <h2>Welcome Back</h2>
+        <p>Please sign in to your account</p>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-row">
+                <a href="#" class="signup-link" onclick="openSignupModal()">Don't have an account? Sign up</a>
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <a href="caretaker-dashboard.html">Caretaker Dashboard</a>
+            </div>
+           
+        </form> </div>
+    </div>
+    
+
+
+   
+    <!-- Signup Modal -->
+<div id="signupModal" class="modal-overlay hidden">
+    <div class="modal">
+        <button class="close-btn" onclick="closeSignupModal()">×</button>
+        <h2>Create an Account</h2>
+        <p>Join MemoryLane and help manage precious memories</p>
+
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <div class="form-group">
+                <label for="caretakerName">Caretaker Name</label>
+                <input type="text" id="caretakerName" placeholder="Enter caretaker's name" required>
+            </div>
+            <div class="form-group">
+                <label for="caretakerEmail">Caretaker Email</label>
+                <input type="email" id="caretakerEmail" placeholder="Enter caretaker's email" required>
+            </div>
+            <div class="form-group">
+                <label for="patientName">Patient Name</label>
+                <input type="text" id="patientName" placeholder="Enter patient's name" required>
+            </div>
+            <div class="form-group">
+                <label for="patientEmail">Patient Email</label>
+                <input type="email" id="patientEmail" placeholder="Enter patient's email" required>
+            </div>
+            <div class="form-group">
+                <label for="relation">Relation</label>
+                <input type="text" id="relation" placeholder="Enter relation to the patient" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            
+            <button type="submit" class="primary-btn">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Dashboard (Initially Hidden) -->
+    <div id="dashboard" class="dashboard hidden">
+        <header class="dashboard-header">
+            <h1>Welcome, Sarah! 👋</h1>
+            <div class="profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">S</button>
+                <div id="profileDropdown" class="profile-dropdown hidden">
+                    <button onclick="handleProfileSettings()">Profile Settings</button>
+                    <button onclick="handleLogout()">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="photo-recognition">
+            <div class="upload-area">
+                <h2>Who Is This?</h2>
+                <p>Take a photo or upload an image to identify your loved ones</p>
+                <div class="upload-buttons">
+                    <button class="primary-btn">Take Photo</button>
+                    <button class="secondary-btn">Upload Image</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="memory-gallery">
+            <h2>Family & Friends</h2>
+            <div class="gallery-grid" id="familyGallery"></div>
+        </section>
+
+        <section class="memory-gallery">
+            <h2>My Memories</h2>
+            <div class="gallery-grid" id="memoriesGallery"></div>
+        </section>
+
+        <section class="games-section">
+            <h2>Brain Games</h2>
+            <div class="games-grid" id="gamesGrid"></div>
+        </section>
+    </div>
+
+    <script src="js/features.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
